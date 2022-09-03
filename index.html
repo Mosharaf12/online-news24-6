@@ -40,9 +40,7 @@
     
                     <div class="">
                         <ul id="ul-catagory" class="navbar-nav d-flex categories">
-                            <li id="btn-li" class="nav-item me-3 ">
-                                <a onclick="alllink()" href="#" class="nav-link btn">Home</a>
-                            </li>
+                            
                         </ul>
                     </div>
     
@@ -51,22 +49,22 @@
         
     </header>
     <!-- main -->
-    <main>
+    <main class="container">
+      <section class="mb-5">
+        <div id="count-category" class="py-3 ps-4 rounded-3">
+        </div>
+    </section>
+
+    <!-- spinner  -->
+    <section id="loadingSection" class="d-flex align-items-center justify-content-center p-5 d-none">
+        <div class="spinner-border text-primary " style="width: 3rem; height: 3rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </section>
       <!-- main section  -->
-      <section>
+      <section id="all-posts">
         <div id="category-Posts" class="card mb-3 border-0">
-          <div class="card text-bg-dark">
-              <img src="https://picsum.photos/1000/400" class="card-img social-news-img img-fluid" alt="...">
-              <div class="card-img-overlay">
-                  <h2 class="card-title">Live Pictures in frame</h2>
-                  <p style="max-width: 500px; overflow:hidden;" class="card-text">A social news website is a
-                      website
-                      that features
-                      user-posted stories. Such
-                      stories are ranked based on popularity, as voted on by other users
-                  </p>
-              </div>
-          </div>
+          
       </div>
       </section>
     </main>
