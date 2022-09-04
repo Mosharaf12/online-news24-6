@@ -22,6 +22,18 @@
 
     }
 
+    // loading 
+const loadingSpin = (loader) => {
+    const spinner = document.getElementById('spiner-loading');
+    if (loader) {
+        spinner.classList.remove('d-none');
+    }
+    else {
+        spinner.classList.add('d-none');
+    }
+}
+
+
     const alllink = (id)=> {
         console.log('button cliked');
         const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
@@ -29,44 +41,72 @@
         .then(Response => Response.json())
         .then(data => showCard(data.data))
     }
+    // alllink();
 
-    const fillCard = document.getElementById('category-Posts')
     const showCard = (cards)=>{
+    const fillCard = document.getElementById('category-Posts')
+        fillCard.innerHTML=``;
         for(const card of cards){
-            fillCard.innerHTML = '';
+
+        const foundCategoryField = document.getElementById('found-category');
+        foundCategoryField.innerHTML = `
+            <h4>${cards.length}  items found for category </h4>
+        `;
+
+
             console.log(card);
-            const newDiv = document.createElement('div');
-            newDiv.innerHTML = `
-            <div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-          </div><div class="card mb-3" style="max-width: 540px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="..." class="img-fluid rounded-start" alt="...">
+            const createRow = document.createElement('div');
+            createRow.classList.add('row', 'my-4', 'bg-light', 'py-3', 'shadow', 'px-3', 'rounded-3', 'g-0')
+
+            createRow.innerHTML = `
+                <div class="col-md-4 d-flex d-lg-block justify-content-center mb-3 mb-lg-0">
+                <img src="${card.thumbnail_url}" class="img-fluid w-75 rounded-3" alt="...">
             </div>
             <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
+                <div class="card-body">
+                <h5 class="card-title fw-bold py-3">${card.title}</h5>
+                <p class="card-text text-muted ">${card.details.slice(0, 150)}</p>
+                <p class="card-text text-muted allPeragraph">${card.details.slice(201, 318)}</p>
+                
+                <div class="row mt-5 d-flex align-items-center pt-5"> <!--Author details-->
+                    <div class='d-flex align-content-start col-lg-4'>
+                        <img style="width:50px; height: 50px" class="img-fluid rounded-circle me-3" src="${card.author.img}">
+                        <div>
+                            <p class="fw-bold m-0">${card.author.name ? card.author.name : 'no username found'}</p>
+                            <p><small>Sep 3, 2022</small></p>
+                        </div>
+                    </div>
+                
+                <div class="col-lg-3"  style="color: black" >
+                    <div class=" d-flex align-items-center">
+                    <i class="fa-solid fa-eye me-2"></i>
+                    <p class="m-0 fw-bold postView" id="${card._id}">${card.total_view ? card.total_view : 'No views'}</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <i class="fa-solid fa-star"></i> 
+                    <i class="fa-solid fa-star"></i> 
+                    <i class="fa-solid fa-star"></i> 
+                    <i class="fa-solid fa-star"></i> 
+                    <i class="fa-solid fa-star"></i> 
+                </div>
+
+                <div id="clickToModal" class="col-lg-2" >
+                <button onclick="myModal('${card._id}')" class='btn border-0'   data-bs-toggle="modal" data-bs-target="#postDetailModal">
+                    <i style="font-size: 23px; font-weight: bold" class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                </div>
+                
+                </div>
+                </div>
             </div>
-          </div>
-        </div>
             `
-            fillCard.append(newDiv)
+
+            fillCard.appendChild(createRow);
         }
-    }
+        }
+
 
 loadNewsdata()
