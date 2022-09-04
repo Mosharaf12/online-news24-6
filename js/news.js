@@ -7,6 +7,7 @@
     const displaydata = catagories => {
         // console.log(catagories);
         const ulCatagory = document.getElementById('ul-catagory');
+       
 
         for (const category of catagories) {
             const allCatagories = category.category_name;
@@ -17,7 +18,6 @@
                 <a onclick="alllink('${category.category_id}')" class="btn categoryBtn">${allCatagories}</a>
             `
             ulCatagory.appendChild(li);
-            // isLoading(true);
         }
 
     }
@@ -40,6 +40,7 @@ const loadingSpin = (loader) => {
         fetch(url)
         .then(Response => Response.json())
         .then(data => showCard(data.data))
+        loadingSpin(true);
     }
     // alllink();
 
@@ -106,7 +107,34 @@ const loadingSpin = (loader) => {
 
             fillCard.appendChild(createRow);
         }
+        loadingSpin(false)
         }
+
+        const myModal = (modals) => {
+            const geturl = `
+            https://openapi.programming-hero.com/api/news/${modals}
+            `
+            fetch(geturl)
+                .then(Response => Response.json())
+                .then(data => displayModal(data.data[0]))
+        }
+        
+        const displayModal = modal => {
+            console.log(modal);
+            const postTitle = document.getElementById('modalPostDetail');
+            postTitle.innerText = `${modal.title}`;
+            
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <h6>Badge: ${modal.rating.badge}</h6>
+                <img src="${modal.image_url}" class="img-fluid">
+                <p>${modal.details}</p>
+                <p class="fw-bold">Rating: ${modal.rating.number}</p>
+            `
+            
+        
+        }
+
 
 
 loadNewsdata()
