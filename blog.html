@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+<!-- bootstrap link  -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- font awesome link  -->
+    <script src="https://kit.fontawesome.com/5d73ebcce2.js" crossorigin="anonymous"></script>
+
+    <!-- external css  -->
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <!-- navbar  -->
+              <nav class="navbar navbar-expand-lg">
+                  <div class="container py-4 nav-menu">
+                    <a class="navbar-brand text-info fw-bold" href="#"><h2>Online News24</h2></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link active text-primary fw-semibold" aria-current="page" href="index.html">News</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active fw-semibold" href="#">Blog</a>
+                        </li>
+                      
+                       
+                      </ul>
+                     
+                    </div>
+                  </div>
+                </nav>
+  
+                <!-- second section items  -->
+                <section class="container py-3">
+                  <nav class="navbar navbar-expand-lg fw-semibold ">
+      
+                      <div class="">
+                          <ul id="ul-catagory" class="navbar-nav d-flex categories">
+                              
+                          </ul>
+                      </div>
+      
+                  </nav>
+              </section>
+          
+      </header>
+
+
+      <main class="container">
+
+        <section>
+            <div>
+                <div class="accordion mt-5" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Difference between var let and const.
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong> let: The let keyword declares
+                                    a block-scoped local variable, optionally initializing it to a value.</strong>
+                                Block-scoped means
+                                that the variable is only available within the block it was declared in, which is
+                                usually denoted by curly braces {}. var: The var keyword declares a function-scoped or
+                                global variable, optionally initializing it to a value. Function-scoped means that the
+                                variable is only available within the function it was declared in. Global variables are
+                                available throughout your entire code. const: The const keyword declares a block-scoped,
+                                immutable constant variable, i.e. a variable that can't be reassigned. Constants are
+                                also called
+                                <code>“immutable variables”, </code>but that's a bit of a misnomer since they are
+                                actually variables - just ones that can't be reassigned.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Explain about Map, ForEach, Filter and Find
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>.forEach(),</strong> is used to execute the same code on every element in an
+                                array but does not
+                                change the array and it returns undefined.
+                                <strong>.map()</strong> executes the same code on every element in an array and returns
+                                a new array with
+                                the updated elements.
+                                <strong>.filter()</strong> checks every element in an array to see if it meets a certain
+                                criteria and
+                                returns a new array with the elements that return truthy for the criteria.
+                                <strong>The find()</strong> method returns the first element in the provided array that
+                                satisfies the
+                                provided testing function. If no values satisfy the testing function, undefined is
+                                returned.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Diffrence between arrow function and regular function
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Unlike regular functions, arrow functions do not have their own this . The value of this
+                                inside an arrow function remains the same throughout the lifecycle of the function and
+                                is always bound to the value of this in the closest non-arrow parent function.
+                                There are two major benefits of using Arrow functions. One is that it's a shorter syntax
+                                and thus requires less code. The main benefit is that it removes the several pain points
+                                associated with the this operator.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Why do use template string?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until
+                                the collapse plugin adds the appropriate classes that we use to style each element.
+                                These classes control the overall appearance, as well as the showing and hiding via CSS
+                                transitions. You can modify any of this with custom CSS or overriding our default
+                                variables. It's also worth noting that just about any HTML can go within the
+                                <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+</html>
