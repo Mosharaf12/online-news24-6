@@ -47,7 +47,7 @@ const loadingSpin = (loader) => {
     const showCard = (cards)=>{
         cards.sort((a, b) => {
             return b.total_view - a.total_view
-        })
+        });
     const fillCard = document.getElementById('category-Posts')
         fillCard.innerHTML=``;
         
