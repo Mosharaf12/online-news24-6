@@ -69,17 +69,17 @@
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <strong> let: The let keyword declares
-                                    a block-scoped local variable, optionally initializing it to a value.</strong>
+                                <strong> let: </strong> The let keyword declares
+                                    a block-scoped local variable, optionally initializing it to a value.
                                 Block-scoped means
                                 that the variable is only available within the block it was declared in, which is
-                                usually denoted by curly braces {}. var: The var keyword declares a function-scoped or
+                                usually denoted by curly braces {}. <strong> var: </strong> The var keyword declares a function-scoped or
                                 global variable, optionally initializing it to a value. Function-scoped means that the
                                 variable is only available within the function it was declared in. Global variables are
-                                available throughout your entire code. const: The const keyword declares a block-scoped,
+                                available throughout your entire code. <strong>const: </strong> The const keyword declares a block-scoped,
                                 immutable constant variable, i.e. a variable that can't be reassigned. Constants are
                                 also called
-                                <code>“immutable variables”, </code>but that's a bit of a misnomer since they are
+                                immutable variables, but that's a bit of a misnomer since they are
                                 actually variables - just ones that can't be reassigned.
                             </div>
                         </div>
@@ -88,10 +88,32 @@
                         <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Explain about Map, ForEach, Filter and Find
+                                Diffrence between arrow function and regular function
+                    
                             </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                 Unlike regular functions, arrow functions do not have their own this . The value of this
+                                inside an arrow function remains the same throughout the lifecycle of the function and
+                                is always bound to the value of this in the closest non-arrow parent function.
+                                There are two major benefits of using Arrow functions. One is that it's a shorter syntax
+                                and thus requires less code. The main benefit is that it removes the several pain points
+                                associated with the this operator.
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Explain about Map, ForEach, Filter and Find
+                                
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <strong>.forEach(),</strong> is used to execute the same code on every element in an
@@ -107,25 +129,7 @@
                                 satisfies the
                                 provided testing function. If no values satisfy the testing function, undefined is
                                 returned.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Diffrence between arrow function and regular function
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Unlike regular functions, arrow functions do not have their own this . The value of this
-                                inside an arrow function remains the same throughout the lifecycle of the function and
-                                is always bound to the value of this in the closest non-arrow parent function.
-                                There are two major benefits of using Arrow functions. One is that it's a shorter syntax
-                                and thus requires less code. The main benefit is that it removes the several pain points
-                                associated with the this operator.
+                               
                             </div>
                         </div>
                     </div>
@@ -145,7 +149,7 @@
                                 These classes control the overall appearance, as well as the showing and hiding via CSS
                                 transitions. You can modify any of this with custom CSS or overriding our default
                                 variables. It's also worth noting that just about any HTML can go within the
-                                <code>.accordion-body</code>, though the transition does limit overflow.
+                                accordion-body, though the transition does limit overflow.
                             </div>
                         </div>
                     </div>

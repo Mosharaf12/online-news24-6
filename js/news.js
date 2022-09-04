@@ -48,12 +48,13 @@ const loadingSpin = (loader) => {
     const fillCard = document.getElementById('category-Posts')
         fillCard.innerHTML=``;
         for(const card of cards){
+            
+        
 
         const foundCategoryField = document.getElementById('found-category');
         foundCategoryField.innerHTML = `
             <h4>${cards.length}  items found for category </h4>
         `;
-
 
             console.log(card);
             const createRow = document.createElement('div');
@@ -107,6 +108,7 @@ const loadingSpin = (loader) => {
 
             fillCard.appendChild(createRow);
         }
+    
         loadingSpin(false)
         }
 
