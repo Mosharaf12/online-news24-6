@@ -45,13 +45,14 @@ const loadingSpin = (loader) => {
     // alllink();
 
     const showCard = (cards)=>{
+        cards.sort((a, b) => {
+            return b.total_view - a.total_view
+        })
     const fillCard = document.getElementById('category-Posts')
         fillCard.innerHTML=``;
-        for(const card of cards){
-            
         
-
-        const foundCategoryField = document.getElementById('found-category');
+        cards.forEach(card => {
+            const foundCategoryField = document.getElementById('found-category');
         foundCategoryField.innerHTML = `
             <h4>${cards.length}  items found for category </h4>
         `;
@@ -107,7 +108,7 @@ const loadingSpin = (loader) => {
             `
 
             fillCard.appendChild(createRow);
-        }
+        })
     
         loadingSpin(false)
         }
